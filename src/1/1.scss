@@ -1,0 +1,89 @@
+.rcp-mask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.rcp-loading1 h2 {
+  color: #69f;
+  margin-bottom: 10px;
+  font: {
+    size: 1.4em;
+    style: italic;
+    family: verdana, sans-serif;
+  };
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  &::before {
+    content: 'LOADING...';
+    position: absolute;
+    overflow: hidden;
+    max-width: 9em;
+    color: #a481b9;
+    animation: txtLoading 2.2s linear infinite;
+  }
+}
+
+/*
+ * Loading Dots
+ * Can we use pseudo elements here instead :after?
+ */
+.rcp-loading1 span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0.19em;
+  background: #007db6;
+  border-radius: 0.7em;
+  animation: loading 1s infinite alternate;
+
+  &:nth-of-type(2) {
+    background: #008fb2;
+    animation-delay: 0.2s;
+  }
+
+  &:nth-of-type(3) {
+    background: #009b9e;
+    animation-delay: 0.4s;
+  }
+
+  &:nth-of-type(4) {
+    background: #00a77d;
+    animation-delay: 0.6s;
+  }
+
+  &:nth-of-type(5) {
+    background: #00b247;
+    animation-delay: 0.8s;
+  }
+
+  &:nth-of-type(6) {
+    background: #5ab027;
+    animation-delay: 1s;
+  }
+
+  &:nth-of-type(7) {
+    background: #a0b61e;
+    animation-delay: 1.2s;
+  }
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes txtLoading {
+  from { max-width: 0; }
+}

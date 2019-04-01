@@ -1,0 +1,62 @@
+@import './css/normalize';
+$bg-colors:
+(linear-gradient(to right, #e55d87, #5fc3e4)),
+(linear-gradient(to right, #ff512f, #dd2476)),
+(#717042),
+(#983636),
+(#2a3165);
+
+body {
+  padding: 20px;
+}
+
+.m-loading {
+  > li {
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+}
+
+.loading-box {
+  height: 250px;
+  border-radius: 10px;
+
+  @for $i from 1 through 2 {
+    &:nth-of-type(#{$i}) {
+      background: #{nth($bg-colors, $i)};
+    }
+  }
+}
+
+.loading-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 0;
+
+  > h4 {
+    margin-right: auto;
+  }
+
+  > button {
+    height: 30px;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    &:nth-of-type(1) {
+      background-color: #12c2e9;
+    }
+
+    &:nth-of-type(2) {
+      background-color: #c471ed;
+    }
+
+    &:nth-of-type(3) {
+      background-color: #f64f59;
+    }
+  }
+}
