@@ -3,13 +3,13 @@ const path = require('path');
 module.exports = () => ({
   context: path.resolve(__dirname, '../src/'),
   entry: {
-    loadings: './index',
+    loader: './index',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   output: {
-    library: 'loadings',
+    library: 'loader',
     libraryTarget: 'umd',
   },
   module: {

@@ -1,13 +1,22 @@
-.rcp-mask {
+@import '../../css/animate';
+
+.m-rpc-loader-1 {
+  position: relative;
+}
+
+.rcp-loader-1__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(255, 255, 255, .6);
 }
 
-.rcp-loading1 h2 {
+.rcp-loader-1__content {
   color: #69f;
   margin-bottom: 10px;
   font: {
@@ -29,11 +38,7 @@
   }
 }
 
-/*
- * Loading Dots
- * Can we use pseudo elements here instead :after?
- */
-.rcp-loading1 span {
+.rcp-loader-1__box > span {
   display: inline-block;
   vertical-align: middle;
   width: 0.7em;

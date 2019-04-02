@@ -1,40 +1,55 @@
 @import './css/normalize';
+@import './css/animate';
+
 $bg-colors:
 (linear-gradient(to right, #e55d87, #5fc3e4)),
+(linear-gradient(to right, #355c7d, #6c5b7b, #c06c84)),
 (linear-gradient(to right, #ff512f, #dd2476)),
-(#717042),
 (#983636),
 (#2a3165);
 
+$colors:
+(#5fc3e4),
+(#dd2476),
+(#6c5b7b);
+
 body {
   padding: 20px;
+  background-color: #f5f5f5;
 }
 
-.m-loading {
-  > li {
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
-}
-
-.loading-box {
-  height: 250px;
+.loader__list {
+  margin-bottom: 10px;
   border-radius: 10px;
 
-  @for $i from 1 through 2 {
+  @for $i from 1 through 3 {
     &:nth-of-type(#{$i}) {
-      background: #{nth($bg-colors, $i)};
+      .loader__box {
+        background: #{nth($bg-colors, $i)};
+      }
+
+      .loader__btn-group > h4 {
+        color: #{nth($colors, $i)};
+      }
     }
   }
 }
 
-.loading-btn-group {
+.loader__box {
+  height: 250px;
+  border-radius: 10px;
+}
+
+.loader__btn-group {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 15px 0;
 
   > h4 {
+    font-size: 24px;
+    font-family: Helvetica,Helvetica Neue;
+    font-style: italic;
     margin-right: auto;
   }
 
@@ -47,12 +62,16 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     
-    &:nth-of-type(1) {
-      background-color: #12c2e9;
+    &:hover {
+      animation: rubberBand 1s;
     }
 
-    &:nth-of-type(2) {
+    &:nth-of-type(1) {
       background-color: #c471ed;
+    }
+    
+    &:nth-of-type(2) {
+      background-color: #12c2e9;
     }
 
     &:nth-of-type(3) {

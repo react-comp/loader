@@ -3,7 +3,7 @@ import * as ReactDOM from "react-dom";
 import * as PropTypes from 'prop-types';
 //
 // import './index.scss';
-import Loading1 from './1/1';
+import Loading1 from './views/1/1';
 
 // export interface loadingsProps {
 

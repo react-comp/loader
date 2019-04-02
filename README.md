@@ -1,30 +1,30 @@
 # Introduction
 
-loadings
+loader
 
 # Install
 
 npm
 
 ```shell
-npm install "@react-comp/loadings"
+npm install "@react-comp/loader"
 ```
 
 yarn
 
 ```shell
-yarn add "@react-comp/loadings"
+yarn add "@react-comp/loader"
 ```
 
 # Demo
 
-[demo](https://react-comp.github.io/loadings/)
+[demo](https://react-comp.github.io/loader/)
 
 # Usage
 
 ```js
-import loadings from "@react-comp/loadings";
-import "@react-comp/loadings/dist/loadings.css";
+import Loader from "@react-comp/loader";
+import "@react-comp/loader/dist/loader.css";
 
 // ...
 ```

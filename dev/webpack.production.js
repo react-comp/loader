@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.base');
 
 module.exports = (env) => {
   const entractCss = new ExtractTextPlugin({
-    filename: 'loadings.css',
+    filename: 'loader.css',
   });
   const config = webpackMerge(
     baseConfig(env),
