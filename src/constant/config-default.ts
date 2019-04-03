@@ -1,0 +1,1 @@
+export const MASK_BG_COLOR: string = 'rgba(255, 255, 255, .6)';

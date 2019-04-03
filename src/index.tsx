@@ -1,30 +1,10 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import * as PropTypes from 'prop-types';
-//
-// import './index.scss';
-import Loading1 from './views/1/1';
+import Loader1 from './views/1/1';
+import Loader2 from './views/2/2';
+import Loader3 from './views/3/3';
 
-// export interface loadingsProps {
-
-// }
-
-// export default class loadings extends React.PureComponent<loadingsProps> {
-//   static propTypes = {
-
-//   }
-
-//   static defaultProps = {
-
-//   }
-
-//   state = {}
-
-//   render() {
-//     return null;
-//   }
-// }
 
 export default {
-  Loading1,
+  Loader1,
+  Loader2,
+  Loader3,
 };

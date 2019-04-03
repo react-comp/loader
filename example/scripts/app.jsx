@@ -21,20 +21,25 @@ export default class App extends PureComponent {
         key: 'loading1',
         comp: Loading1,
         isLoading: true,
-        isGlobal: true,
+        isGlobal: false,
+        contentClassName: 'haha1',
       },
-      // {
-      //   key: 'loading2',
-      //   comp: Loading2,
-      //   isLoading: true,
-      //   global: false,
-      // },
-      // {
-      //   key: 'loading3',
-      //   comp: Loading3,
-      //   isLoading: true,
-      //   global: false,
-      // },
+      {
+        key: 'loading2',
+        comp: Loading2,
+        isLoading: true,
+        global: false,
+        bgColor: '',
+      },
+      {
+        key: 'loading3',
+        comp: Loading3,
+        isLoading: true,
+        global: false,
+        bgColor: '',
+        loadText: <span>Loading...</span>,
+        contentClassName: 'haha3',
+      },
     ],
   }
 
@@ -43,6 +48,19 @@ export default class App extends PureComponent {
     loadingList[index].isLoading = state;
 
     this.setState({ loadingList: [...loadingList] });
+  }
+
+  openGlobalLoading(index) {
+    const { loadingList } = this.state;
+    loadingList[index].isGlobal = true;
+
+    this.setState({ loadingList: [...loadingList] });
+
+    setTimeout(() => {
+      loadingList[index].isGlobal = false;
+
+      this.setState({ loadingList: [...loadingList] });
+    }, 3000);
   }
 
   render() {
@@ -54,8 +72,7 @@ export default class App extends PureComponent {
           loadingList.map((item, index) => (
             <li key={item.key} className="loader__list">
               <item.comp
-                isLoading={item.isLoading}
-                isGlobal={item.isGlobal}
+                {...item}
               >
                 <div className="loader__box" />
               </item.comp>
@@ -65,7 +82,7 @@ export default class App extends PureComponent {
                 <h4>{index + 1}</h4>
 
                 <button type="button" onClick={() => this.toggleLoading(index, false)}>Not loading</button>
-                <button type="button">Global Loading</button>
+                <button type="button" onClick={() => this.openGlobalLoading(index)}>Global Loading</button>
                 <button type="button" onClick={() => this.toggleLoading(index, true)}>Loading</button>
               </div>
             </li>

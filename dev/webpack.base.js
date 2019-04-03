@@ -4,6 +4,9 @@ module.exports = () => ({
   context: path.resolve(__dirname, '../src/'),
   entry: {
     loader: './index',
+    loader1: './views/1/1',
+    loader2: './views/2/2',
+    loader3: './views/3/3',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],

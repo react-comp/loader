@@ -29,3 +29,6 @@ import "@react-comp/loader/dist/loader.css";
 // ...
 ```
 
+# TODOLIST
+
+- [ ] Package separately

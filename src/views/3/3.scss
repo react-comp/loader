@@ -1,38 +1,19 @@
+@import '../../css/animate';
+
 $color-background: #eaecfa;
 $color-loader: #ce4233;
 
-.rcp-3__mask {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // background-color: #fff;
-  // position: relative;
-  // width: 100%;
-  // height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, .6);
-}
-
-.loader {
-  width: 250px;
+.rcp-loader-3__content {
+  position: relative;
+  // width: 250px;
   height: 50px;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: 900;
   line-height: 50px;
   text-align: center;
-  position: relative;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%,-50%);
-  font-family: helvetica, arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 900;
-  color: $color-loader;
   letter-spacing: 0.2em;
+  color: $color-loader;
   
   &::before, &::after {
     content: "";
@@ -41,7 +22,7 @@ $color-loader: #ce4233;
     height: 15px;
     background: $color-loader;
     position: absolute;
-    animation: load .7s infinite alternate ease-in-out;
+    animation: slider .7s infinite alternate ease-in-out;
   }
   
   &::before {
@@ -53,8 +34,8 @@ $color-loader: #ce4233;
   }
 }
 
-@keyframes load {
-  0% { left: 0; height: 30px; width: 15px }
+@keyframes slider {
+  0% { left: -35px; height: 30px; width: 15px }
   50% { height: 8px; width: 40px }
-  100% { left: 235px; height: 30px; width: 15px}
+  100% { left: 115%; height: 30px; width: 15px}
 }
