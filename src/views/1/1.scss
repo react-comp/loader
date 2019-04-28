@@ -2,6 +2,23 @@
 
 $colors: (#007db6), (#008fb2), (#009b9e), (#00a77d), (#00b247), (#5ab027), (#a0b61e), (#98b3ad);
 
+.rcp-loader-1__box > span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.7em;
+  height: 0.7em;
+  margin: 0.19em;
+  border-radius: 0.7em;
+  animation: loading 1s infinite alternate;
+
+  @for $i from 1 through 8 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: 0.2s * $i;
+      background: #{nth($colors, $i)};
+    }
+  }
+}
+
 .rcp-loader-1__content {
   color: #69f;
   margin-bottom: 10px;
@@ -20,23 +37,6 @@ $colors: (#007db6), (#008fb2), (#009b9e), (#00a77d), (#00b247), (#5ab027), (#a0b
     max-width: 9em;
     color: #a481b9;
     animation: txtLoading 2.2s linear infinite;
-  }
-}
-
-.rcp-loader-1__box > span {
-  display: inline-block;
-  vertical-align: middle;
-  width: 0.7em;
-  height: 0.7em;
-  margin: 0.19em;
-  border-radius: 0.7em;
-  animation: loading 1s infinite alternate;
-
-  @for $i from 1 through 8 {
-    &:nth-of-type(#{$i}) {
-      animation-delay: 0.2s * $i;
-      background: #{nth($colors, $i)};
-    }
   }
 }
 

@@ -1,3 +1,4 @@
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -12,7 +13,8 @@ module.exports = (env) => {
     {
       mode: 'production',
       output: {
-        filename: '[name].production.min.js',
+        path: path.resolve(__dirname, '../lib'),
+        filename: '[name].js',
       },
       module: {
         rules: [

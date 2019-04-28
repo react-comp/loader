@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./dist/loader.production.min');
+  module.exports = require('./lib/loader');
 } else {
-  module.exports = require('./dist/loader.development');
+  module.exports = require('./dev-dist/loader.development');
 }

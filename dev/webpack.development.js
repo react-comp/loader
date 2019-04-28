@@ -1,3 +1,4 @@
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 
 const baseConfig = require('./webpack.base');
@@ -9,6 +10,7 @@ module.exports = (env) => {
       devtool: 'inline-source-map',
       mode: 'development',
       output: {
+        path: path.resolve(__dirname, '../dev-dist'),
         filename: '[name].development.js',
       },
       module: {

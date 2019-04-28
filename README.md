@@ -24,7 +24,7 @@ yarn add "@react-comp/loader"
 
 ```js
 import Loader from "@react-comp/loader";
-import "@react-comp/loader/dist/loader.css";
+import "@react-comp/loader/lib/loader.css";
 
 // ...
 ```

@@ -5,10 +5,10 @@
   "main": "index.js",
   "keywords": [],
   "scripts": {
-    "clean": "rimraf dist/",
-    "dist": "npm run clean && webpack --config ./dev/webpack.config.js",
+    "clean": "rimraf lib/",
+    "dist": "NODE_ENV=production npm run clean && webpack --config ./dev/webpack.config.js",
     "example": "webpack --config ./dev/webpack.example.js",
-    "start": "node ./dev/serve.js",
+    "start": "NODE_ENV=development node ./dev/serve.js",
     "prepublishOnly": "npm run dist && npm run example",
     "pub": "npm publish --access public",
     "test": "node ./dev/jest/start.js",
@@ -26,7 +26,7 @@
     "url": "https://github.com/react-comp/loader/issues"
   },
   "files": [
-    "dist",
+    "lib",
     "index.js",
     "CHANGELOG.md"
   ],
